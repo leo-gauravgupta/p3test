@@ -1,0 +1,31 @@
+{% extends "menus/base.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block body %}
+        <h1>Menu</h1>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Sub-tem</th>
+                <th>Small</th>
+                <th>Large</th>
+            </tr>
+            {% for menu in menus %}
+                <tr>
+                <td>{{ menu.item }}</td>
+                <td>{{ menu.subItem }}</td>
+                <td>{{ menu.priceSmall }}</td>
+                <td>{{ menu.priceLarge }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+{% endblock %}

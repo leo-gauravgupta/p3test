@@ -1,0 +1,25 @@
+{% extends "menus/base.html" %}
+
+{% block title %}
+    Checkout 
+{% endblock %}
+
+{% block body %}
+<h1>Checkout</h1>
+
+<ul>
+    <li>Flight Number: {{ flight.id }}</li>
+    <li>Origin: {{ flight.origin }}</li>
+    <li>Destination:  {{ flight.destination }}</li>
+    <li>
+        Passengers:
+        <ul>
+            {% for passenger in passengers %}
+                <li>{{ passenger }}</li>
+            {% empty %}
+                <li>No passengers</li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+{% endblock %}
