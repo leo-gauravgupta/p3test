@@ -1,25 +1,26 @@
 {% extends "menus/base.html" %}
 
 {% block title %}
-    Checkout 
+    Checkout
 {% endblock %}
 
 {% block body %}
 <h1>Checkout</h1>
 
 <ul>
-    <li>Flight Number: {{ flight.id }}</li>
-    <li>Origin: {{ flight.origin }}</li>
-    <li>Destination:  {{ flight.destination }}</li>
-    <li>
-        Passengers:
-        <ul>
-            {% for passenger in passengers %}
-                <li>{{ passenger }}</li>
-            {% empty %}
-                <li>No passengers</li>
-            {% endfor %}
-        </ul>
-    </li>
+    <li>Customer Name: {{ customer.first }} {{ customer.last }}</li>
+    <li>Order Number: {{ orders.id }}</li>
+    <li>Order Item: {{ orders.order_item }}</li>
+    <li>Order Sub-Item: {{ orders.order_subItem }} </li>
+    <li>Order Toppings: {{ orders.order_toppings }} </li>
+    <li>Order Size: {{ orders.orderSize }} </li>
+    <p>-------------------------------------</p>
+    <li>Order Quantity: {{ orders.orderQty }} </li>
+    <li>Order Price: {{ orders.orderPrice }} </li>
+    <p>-------------------------------------</p>
+    <li>Order Total: {{ orders.orderCost }} </li>
 </ul>
+
+<br>
+<a href="{ % url 'menuindex' %}">Back to Menu</a>
 {% endblock %}

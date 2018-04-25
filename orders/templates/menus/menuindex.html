@@ -60,7 +60,6 @@
                 <th>Item</th>
             </tr>
         {% for menu in menus %}
-            {% if menu.item == "Toppings" %}
             <style>
                 table, th, td {
                 border: 1px solid black;
@@ -68,9 +67,8 @@
                 }
             </style>
                 <tr>
-                    <td>{{ menu.subItem }}</td>
+                    <td>{{ menu.toppings }}</td>
                 </tr>
-              {% endif %}
           {% endfor %}
         </table>
 
@@ -172,4 +170,7 @@
 
         <br>
         <h3><a href="{% url 'order' %}">Place an Order</a></h3>
+
+        <hr>
+        <a href="{% url 'logout' %}">Logout</a>
 {% endblock %}

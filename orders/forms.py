@@ -1,11 +1,28 @@
 from django import forms
-from .models import Menu
-
-class OrderForm(forms.ModelForm):
-    class Meta:
-        model = Menu
-        fields = ('item', 'subItem')
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['subItem'].queryset = Menu.objects.none()
+class UserRegistrationForm(forms.Form):
+    username = forms.CharField(
+        required =  True,
+        label = 'Username',
+        max_length = 32
+    )
+    first_name = forms.CharField(
+        required =  True,
+        label = 'FirstName',
+        max_length = 32
+    )
+    last_name = forms.CharField(
+        required =  True,
+        label = 'LastName',
+        max_length = 32
+    )
+    email = forms.CharField(
+        required =  True,
+        label = 'Email',
+        max_length = 32
+    )
+    password = forms.CharField(
+        required =  True,
+        label = 'Password',
+        max_length = 32,
+        widget = forms.PasswordInput()
+    )

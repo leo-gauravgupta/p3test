@@ -9,9 +9,7 @@
     <form action="{% url 'orderplace' %}" method="post">
         {% csrf_token %}
         <select name="Customer">
-            {% for customer in customers %}
-                <option value={{ customer.id }}>{{ customer }}</option>
-            {% endfor %}
+                <option value={{ customers.id }}>{{ customers }}</option>
         </select>
         <select name="Item">
             {% for order in orders %}
@@ -41,5 +39,8 @@
     </form>
 
     <br>
-    <a href="{% url 'index' %}">Back to Menu</a>
+    <a href="{% url 'menuindex' %}">Back to Menu</a>
+
+    <hr>
+    <a href="{% url 'logout' %}">Logout</a>
 {% endblock %}

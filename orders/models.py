@@ -42,4 +42,4 @@ class Customer(models.Model):
     orders = models.ManyToManyField(Order, blank=True, related_name="customerorders")
 
     def __str__(self):
-        return f"{self.first} {self.last} {self.custUserID}"
+        return f"{self.first} {self.last}"
